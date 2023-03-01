@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
 import { IBlockData } from '../../../typings';
+import { CSSProperties } from 'react';
 export declare type ISection = IBlockData<{
     'background-color'?: string;
     'background-position'?: string;

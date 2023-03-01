@@ -1,5 +1,5 @@
-import { CSSProperties } from 'react';
 import { IBlock, IBlockData } from '../../../typings';
+import { CSSProperties } from 'react';
 export declare type IImage = IBlockData<{
     alt?: string;
     src?: string;

@@ -1,8 +1,6 @@
 import * as fs from 'fs';
 import * as jsdom from 'jsdom';
 import { camelCase } from 'lodash';
-import { BlockManager } from '../src/utils/BlockManager';
-
 const { JSDOM } = jsdom;
 const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
 
@@ -11,6 +9,7 @@ const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
 (global as any).navigator = dom.window.navigator;
 (global as any).DOMParser = dom.window.DOMParser;
 
+import { BlockManager } from '../src/utils/BlockManager';
 const cwd = process.cwd();
 
 function capitalizeFirstLetter(string: string) {

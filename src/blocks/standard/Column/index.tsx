@@ -3,7 +3,8 @@ import { IBlockData } from '@core/typings';
 import { BasicType } from '@core/constants';
 import { createBlock } from '@core/utils/createBlock';
 import { merge } from 'lodash';
-import { t } from '@core/utils';
+import { getAdapterAttributesString } from '@core/utils';
+import { BlockRenderer } from '@core/components/BlockRenderer';
 import { BasicBlock } from '@core/components/BasicBlock';
 
 export type IColumn = IBlockData<
@@ -22,11 +23,9 @@ export type IColumn = IBlockData<
 >;
 
 export const Column = createBlock<IColumn>({
-  get name() {
-    return t('Column');
-  },
+  name: 'Column',
   type: BasicType.COLUMN,
-  create: payload => {
+  create: (payload) => {
     const defaultData: IColumn = {
       type: BasicType.COLUMN,
       data: {
@@ -44,11 +43,6 @@ export const Column = createBlock<IColumn>({
   validParentType: [BasicType.SECTION, BasicType.GROUP],
 
   render(params) {
-    return (
-      <BasicBlock
-        params={params}
-        tag='mj-column'
-      />
-    );
+    return <BasicBlock params={params} tag="mj-column" />;
   },
 });

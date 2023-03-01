@@ -4,7 +4,6 @@ import { BasicType } from '@core/constants';
 import { createBlock } from '@core/utils/createBlock';
 import { merge } from 'lodash';
 import { BasicBlock } from '@core/components/BasicBlock';
-import { t } from '@core/utils';
 
 export type ISpacer = IBlockData<{
   'container-background-color'?: string;
@@ -13,9 +12,7 @@ export type ISpacer = IBlockData<{
 }>;
 
 export const Spacer: IBlock<ISpacer> = createBlock({
-  get name() {
-    return t('Spacer');
-  },
+  name: 'Spacer',
   type: BasicType.SPACER,
   create: (payload) => {
     const defaultData: ISpacer = {

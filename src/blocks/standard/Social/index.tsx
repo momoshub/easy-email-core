@@ -4,7 +4,7 @@ import { BasicType } from '@core/constants';
 import { createBlock } from '@core/utils/createBlock';
 import { getImg } from '@core/utils/getImg';
 import { mergeBlock } from '@core/utils/mergeBlock';
-import { t } from '@core/utils';
+import { getAdapterAttributesString } from '@core/utils';
 import { BasicBlock } from '@core/components/BasicBlock';
 
 export type ISocial = IBlockData<
@@ -57,9 +57,7 @@ export type ISocial = IBlockData<
 >;
 
 export const Social: IBlock<ISocial> = createBlock({
-  get name() {
-    return t('Social');
-  },
+  name: 'Social',
   type: BasicType.SOCIAL,
   create: (payload) => {
     const defaultData: ISocial = {
